@@ -1,2 +1,1 @@
-suite_def_hydro-c1.cfg filter=lfs diff=lfs merge=lfs -text
-task_vars_hydro-c1.cfg filter=lfs diff=lfs merge=lfs -text
+*.cfg filter=lfs diff=lfs merge=lfs -text
