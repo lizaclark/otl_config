@@ -1,0 +1,17 @@
+# configuration file for fill_stn_data.NN-QM.Rscr (script for filling station timeseries)
+# note 521 stations in PNW
+
+StnList     <- "./station_list.not_filled.txt"  # stn i
+StnListReDo <- "./station_list.not_filled2.txt"  # Output list of IDs that weren't fully filled if FillNoNN == FALSE
+InTsDir     <- "/d6/hydrofcst/overtheloop/data/stn_obs/spinup_qc/"   # location of input unfilled ts data
+OutTsDir    <- "/d6/eclark/overtheloop/data/stn_obs/spinup_fill/"  # location of output filled ts data
+StnCDFDir   <- "/d6/hydrofcst/overtheloop/data/meta/cdf/"    # location of CDFs 
+StnNNDir    <- "/d6/hydrofcst/overtheloop/data/meta/nn/"     # location of nearest neighbors
+FillNoNN    <- TRUE  # TRUE # if no near neigh. found, prcp=0 and temp=lastval; don't use with large gaps 
+FillFlag    <- 2  # use to indicate the number of fill passes (typically 1 for the first time through)
+	          # later could get this from global attributes
+#StopDate    <- "2015-01-01"  # for retro: day on which to stop filling data (for spinup) ...handle better later
+                             #    can use date after end of record to avoid any stop
+StopDate    <- "2016-02-17"  # day on which to stop filling data (for spinup) -- handle better later
+NStartID    <- 1  # number of starting station in station list for filling
+NEndID      <- 2326  # number of ending station in station list for filling
